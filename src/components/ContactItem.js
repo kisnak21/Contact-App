@@ -3,7 +3,7 @@ import ContactItemBody from "./ContactItemBody";
 import ContactItemImage from "./ContactItemImage";
 import DeleteButton from "./DeleteButton";
 
-function ContactItem ({ imageUrl, name, tag, id, onDelete }) {
+function ContactItem({ imageUrl, name, tag, id, onDelete }) {
     return (
         <div className="contact-item">
             <ContactItemImage imageUrl={imageUrl} />
