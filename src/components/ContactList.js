@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 function ContactList({ contacts, onDelete }) {
   return contacts.length !== 0 ? (
-    <div className="contact-list">
+    <div className='contact-list'>
       {contacts.map((contact) => (
         <ContactItem
           key={contact.id}
@@ -15,11 +15,11 @@ function ContactList({ contacts, onDelete }) {
       ))}
     </div>
   ) : (
-    <div className="contact-list__empty-message">Tidak Ada Kontak.</div>
+    <div className='contact-list__empty-message'>Tidak Ada Kontak.</div>
   );
 }
 
-ContactItem.proptype = {
+ContactList.proptype = {
   contacts: PropTypes.arrayOf(PropTypes.object).isRequired,
   onDelete: PropTypes.func.isRequired,
 };
