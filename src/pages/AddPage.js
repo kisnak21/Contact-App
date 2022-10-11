@@ -2,6 +2,7 @@ import React from "react";
 import { addContact } from "../utils/api";
 import { useNavigate } from "react-router-dom";
 import ContactInput from "../components/ContactInput";
+import { LocaleConsumer } from "../contexts/LocaleContext";
 
 function AddPage() {
   const navigate = useNavigate();
@@ -12,10 +13,16 @@ function AddPage() {
   }
 
   return (
-    <section>
-      <h2>Tambah kontak</h2>
-      <ContactInput addContact={onAddContactHandler} />
-    </section>
+    <LocaleConsumer>
+      {({ locale }) => {
+        return (
+          <section>
+            <h2>{locale === "id" ? "Tambah Kontak" : "Add Contact"}</h2>
+            <ContactInput addContact={onAddContactHandler} />
+          </section>
+        );
+      }}
+    </LocaleConsumer>
   );
 }
 
